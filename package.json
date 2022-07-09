@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "prepare": "husky install",
-    "test": "node tests/allTester.js"
+    "test": "node tests/allTester.js",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
