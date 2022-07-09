@@ -27,9 +27,9 @@ const Arborist = class {
 		let currentNode = startNode;
 		while (
 			['ExpressionStatement', 'UnaryExpression', 'UpdateExpression'].includes(currentNode?.parentNode?.type) ||
-			(currentNode.parentNode.type === 'VariableDeclaration' &&
-				(currentNode.parentNode.declarations.length === 1 ||
-				!currentNode.parentNode.declarations.filter(d => d.nodeId !== currentNode.nodeId && !d.markedNode).length)
+			(currentNode?.parentNode?.type === 'VariableDeclaration' &&
+				(currentNode?.parentNode?.declarations.length === 1 ||
+				!currentNode?.parentNode?.declarations?.filter?.(d => d.nodeId !== currentNode.nodeId && !d.markedNode).length)
 			)) currentNode = currentNode.parentNode;
 		return currentNode;
 	}
